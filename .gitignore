@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+build-all
+
+.env
+.env.*
+!.env.example
 
 CLAUDE.md
 
