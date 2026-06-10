@@ -34,3 +34,7 @@ Detailed guides live in the [`docs/`](docs/) folder:
 - [Firebase](docs/firebase.md) — Firebase project configuration, auth providers, and security rules
 - [Architecture](docs/architecture.md) — the three-package layout, routing, and project structure
 - [Deployment](docs/deployment.md) — building and deploying to Firebase Hosting
+
+## License
+
+Released under the [MIT License](LICENSE).
