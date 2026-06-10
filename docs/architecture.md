@@ -16,22 +16,24 @@ For how Firebase is wired across these packages, see [Firebase](firebase.md).
 
 | Path | Screen |
 | --- | --- |
-| `/` | Login |
+| `/` | Combined Sudoku + chat — **public**. The game is open to all; the chat is gated inline (a sign-in overlay until you log in) |
+| `/login` | Login |
 | `/Register` | Register |
-| `/App` | Combined chat + Sudoku (requires authentication; redirects to `/` if not signed in) |
+| `/about` | About |
 
 ## Project structure
 
 ```
 skribblenetwork/
 ├── src/                  outer app (routing, auth screens, layout)
-│   ├── App.jsx           routes + auth gate
+│   ├── App.jsx           routes
 │   ├── firebase.js       compat SDK (Auth + Realtime Database)
 │   ├── login/            login screen
 │   ├── register/         register screen
+│   ├── about/            about page
 │   ├── SignIn.jsx        Google sign-in button
 │   ├── naveBar/          top navigation
-│   └── GameAndChat/      mounts the chat and game together
+│   └── GameAndChat/      title bar, game, and chat (with ChatLocked sign-in overlay)
 ├── Chat-live/            chat sub-app (Cloud Firestore)
 ├── c-game/               Sudoku sub-app (TypeScript)
 ├── docs/                 project documentation

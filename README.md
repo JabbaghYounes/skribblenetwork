@@ -1,6 +1,6 @@
-# Skribble Network
+# Sudorky
 
-A combined web app that pairs a real-time group chat with a Sudoku puzzle game, behind Firebase authentication. It was built by merging two formerly standalone Create React App projects into a single Vite + React application.
+Sudorky is a combined web app that pairs a Sudoku puzzle game with a real-time group chat. The puzzle is open to everyone; the chat is gated behind Firebase authentication. It was built by merging two formerly standalone Create React App projects into a single Vite + React application.
 
 ## Features
 
@@ -8,7 +8,7 @@ A combined web app that pairs a real-time group chat with a Sudoku puzzle game, 
 - User registration with a stored profile record
 - Real-time group chat backed by Cloud Firestore
 - Auto-generated Sudoku puzzles (a fresh puzzle on every load)
-- One combined view: chat and the game side by side once you are signed in
+- One combined view: the Sudoku game is public, with the live chat unlocking once you sign in
 
 ## Tech stack
 
