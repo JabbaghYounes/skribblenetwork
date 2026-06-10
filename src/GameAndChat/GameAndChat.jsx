@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../Chat-live/src/firebase';
 import AppGame from '../../c-game/src/App';
 import AppChat from '../../Chat-live/src/App';
+import ChatLocked from './ChatLocked';
 import LogOut from '../LogOut';
 
 export default function GameAndChat() {
@@ -24,30 +25,19 @@ export default function GameAndChat() {
 
   return (
     <div>
-      {user ? (
-        <LogOut />
-      ) : (
-        <header>
-          <div className="header">
-            <div className="icon-container">
-              <Link to="/login" className="links">Login</Link>
-            </div>
-          </div>
-        </header>
-      )}
+      <header className="topbar">
+        <Link to="/" className="topbar-title">Sudorky</Link>
+        <nav className="topbar-nav">
+          <Link to="/about" className="links">About</Link>
+          {user ? <LogOut /> : <Link to="/login" className="links">Login</Link>}
+        </nav>
+      </header>
       <div className="App">
         <div className="Game-container">
           <AppGame />
         </div>
         <div className="chat-container">
-          {user ? (
-            <AppChat />
-          ) : (
-            <div className="chat-signin-prompt">
-              <p>Sign in to join the chat.</p>
-              <Link to="/login" className="links">Sign in to chat</Link>
-            </div>
-          )}
+          {user ? <AppChat /> : <ChatLocked />}
         </div>
       </div>
     </div>

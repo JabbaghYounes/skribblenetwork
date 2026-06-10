@@ -8,6 +8,7 @@ export default function NavBar() {
         <div className="header">
           <div className="icon-container">
             <Link className='links' to={"/"}>Home</Link>
+            <Link className='links' to={"/about"}>About</Link>
             <Link className='links' to={"/login"}>Login</Link>
             <Link className='links' to={"/Register"}>Register</Link>
           </div>
