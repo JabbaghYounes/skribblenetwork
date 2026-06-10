@@ -42,11 +42,11 @@
 
 // export default SignIn
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import GoogleButton from 'react-google-button';
 import './SignIn.css';
 import { auth } from '../Chat-live/src/firebase';
-import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { Navigate } from 'react-router-dom';
 
 const SignIn = () => {
@@ -70,7 +70,7 @@ const SignIn = () => {
     const provider = new GoogleAuthProvider();
     setLoading(true);
     try {
-      await signInWithRedirect(auth, provider);
+      await signInWithPopup(auth, provider);
     } catch (error) {
       console.log(error.message);
       setLoading(false);
