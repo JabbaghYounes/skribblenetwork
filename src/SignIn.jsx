@@ -84,7 +84,7 @@ const SignIn = () => {
       ) : (
         <GoogleButton className='googlebutton' onClick={googleSignIn} />
       )}
-      {isValid && <Navigate to="/App" />}
+      {isValid && <Navigate to="/" />}
     </div>
   );
 };

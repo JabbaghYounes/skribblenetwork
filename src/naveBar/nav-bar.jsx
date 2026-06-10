@@ -1,34 +1,18 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './nav-bar.css'
-import {useState, useEffect} from 'react'
-export default function NavBar() {
-  const [linkClicked, setLinkClicked] = useState(false);
-  const [linkClickedB, setLinkClickedB] = useState(false);
-  const handleClick = () => {
-    setLinkClicked(true);
-  };
-  const handleClickB = () => {
-    setLinkClickedB(true);
-  };
 
+export default function NavBar() {
   return (
-   <>
-   <header>
-     <div className="header">
-    <div className="icon-container">
-    {!linkClicked && (
-         <Link className='links' onClick={handleClick} to={"/"}>Login</Link>
-      )}
-        {!linkClickedB && (
-        <Link className='links' onClick={handleClickB} to={"Register"}>Register</Link>
-      )}
-        
-    </div>
-    
-    </div>
-   </header>
-   
-   </>
+    <>
+      <header>
+        <div className="header">
+          <div className="icon-container">
+            <Link className='links' to={"/"}>Home</Link>
+            <Link className='links' to={"/login"}>Login</Link>
+            <Link className='links' to={"/Register"}>Register</Link>
+          </div>
+        </div>
+      </header>
+    </>
   )
 }
