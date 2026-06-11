@@ -24,7 +24,6 @@ function Login() {
 
     try {
       await auth.signInWithEmailAndPassword(email, password);
-      console.log(email, password, "Loged in successfully")
       setErrorMessage("Loged in")
       setIsValid(true)
     } catch (error) {
