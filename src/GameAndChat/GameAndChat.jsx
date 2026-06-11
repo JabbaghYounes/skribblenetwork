@@ -5,6 +5,7 @@ import { auth } from '../../Chat-live/src/firebase';
 import AppGame from '../../c-game/src/App';
 import AppChat from '../../Chat-live/src/App';
 import ChatLocked from './ChatLocked';
+import ChatUnverified from './ChatUnverified';
 import LogOut from '../LogOut';
 
 export default function GameAndChat() {
@@ -37,7 +38,13 @@ export default function GameAndChat() {
           <AppGame />
         </div>
         <div className="chat-container">
-          {user ? <AppChat /> : <ChatLocked />}
+          {!user ? (
+            <ChatLocked />
+          ) : user.emailVerified ? (
+            <AppChat />
+          ) : (
+            <ChatUnverified />
+          )}
         </div>
       </div>
     </div>
