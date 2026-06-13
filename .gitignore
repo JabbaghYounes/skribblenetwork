@@ -19,6 +19,7 @@ build-all
 !.env.example
 
 CLAUDE.md
+TODO.md
 
 # Editor directories and files
 .vscode/*
