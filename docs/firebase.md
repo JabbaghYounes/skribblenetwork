@@ -9,6 +9,16 @@ Under **Authentication > Sign-in method**, enable:
 - Email/Password
 - Google (requires a project support email to save)
 
+## Email verification
+
+Registration (`src/register/register.jsx`) sends a verification link via `sendEmailVerification`. The chat is gated on `user.emailVerified`:
+
+- signed out → `ChatLocked` (sign-in overlay)
+- signed in, unverified → `ChatUnverified` (verify-email overlay with a resend button)
+- signed in, verified → the live chat
+
+Google sign-ins are auto-verified. **This gate is client-side only** — to enforce it server-side, add `request.auth.token.email_verified == true` to the Firestore `messages` rules below (note: that immediately blocks any currently-unverified account, including pre-existing ones, until they verify).
+
 ## Cloud Firestore
 
 Chat messages live in the `messages` collection. Suggested rules:

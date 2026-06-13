@@ -16,7 +16,7 @@ For how Firebase is wired across these packages, see [Firebase](firebase.md).
 
 | Path | Screen |
 | --- | --- |
-| `/` | Combined Sudoku + chat — **public**. The game is open to all; the chat is gated inline (a sign-in overlay until you log in) |
+| `/` | Combined Sudoku + chat — **public**. The game is open to all; the chat is gated inline (sign-in overlay, then a verify-email overlay, until you log in and verify) |
 | `/login` | Login |
 | `/Register` | Register |
 | `/about` | About |
@@ -33,7 +33,7 @@ skribblenetwork/
 │   ├── about/            about page
 │   ├── SignIn.jsx        Google sign-in button
 │   ├── naveBar/          top navigation
-│   └── GameAndChat/      title bar, game, and chat (with ChatLocked sign-in overlay)
+│   └── GameAndChat/      title bar, game, and chat (ChatLocked / ChatUnverified overlays gate it)
 ├── Chat-live/            chat sub-app (Cloud Firestore)
 ├── c-game/               Sudoku sub-app (TypeScript)
 ├── docs/                 project documentation

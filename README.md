@@ -2,6 +2,8 @@
 
 Sudorky is a combined web app that pairs a Sudoku puzzle game with a real-time group chat. The puzzle is open to everyone; the chat is gated behind Firebase authentication. It was built by merging two formerly standalone Create React App projects into a single Vite + React application.
 
+**Live:** <https://testing-bfc9f.web.app> — see [docs/deployment.md](docs/deployment.md) for deploy and the planned custom domain.
+
 ## Features
 
 - Email/password and Google sign-in (Firebase Authentication)
